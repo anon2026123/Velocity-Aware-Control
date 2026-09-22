@@ -14,6 +14,11 @@
   <a href="#narrated-overview"><img src="assets/images/nav/video.svg" width="72" height="28" alt="Video"/></a>
 </p>
 
+> *VAC: Coupling Temporal Planning and Velocity Filtering for Quadruped Navigation* — submitted to IEEE ICRA 2027.
+
+> [!IMPORTANT]
+> This repository provides anonymous demo videos and supplementary results for peer review. **The full source code will be open-sourced upon acceptance.**
+
 ## Dynamic preview
 
 <p align="center">
@@ -135,7 +140,3 @@ English narration and subtitles · Full video: **2 min 59.9 s**.
 </p>
 
 <p align="center"><em>Silent 18 s preview · Six 3-second excerpts, each at its original speed.</em></p>
-
-## Code availability
-
-Anonymous review materials. **The source code will be released upon acceptance of the paper.**
