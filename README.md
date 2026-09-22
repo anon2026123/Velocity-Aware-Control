@@ -7,41 +7,41 @@
 <p align="center">Quadruped navigation in dynamic environments.</p>
 
 <p align="center">
-  <a href="#dynamic-preview">Demos</a>
-  &nbsp; · &nbsp;
-  <a href="#ten-method-comparison">Comparison</a>
-  &nbsp; · &nbsp;
-  <a href="#method">Method</a>
-  &nbsp; · &nbsp;
-  <a href="#simulation-and-real-world-results">Results</a>
-  &nbsp; · &nbsp;
-  <a href="#narrated-overview">Video</a>
+  <a href="#dynamic-preview"><img src="assets/images/nav/demos.svg" width="72" height="28" alt="Demos"/></a>
+  <a href="#ten-method-comparison"><img src="assets/images/nav/comparison.svg" width="114" height="28" alt="Comparison"/></a>
+  <a href="#method"><img src="assets/images/nav/method.svg" width="80" height="28" alt="Method"/></a>
+  <a href="#simulation-and-real-world-results"><img src="assets/images/nav/results.svg" width="80" height="28" alt="Results"/></a>
+  <a href="#narrated-overview"><img src="assets/images/nav/video.svg" width="72" height="28" alt="Video"/></a>
 </p>
 
 ## Dynamic preview
 
-Outdoor Go2 navigation through static obstacles and a moving pedestrian, alongside VAC navigation in simulation.
+<p align="center">
+  <img src="assets/previews/hero.gif" width="100%" alt="Real-world experiments at 1× and VAC simulation at 6×"/>
+</p>
 
-![Real-world experiments at 1× and VAC simulation at 6×](assets/previews/hero.gif)
-
-**Real-world: 1× · Simulation: 6×.** Two demonstration excerpts; the opening real-world still is a time montage.
+<p align="center"><em>Real-world (1×) and simulation (6×) excerpts.</em></p>
 
 ## Ten-method comparison
 
-**Dynamic scene · 30 × 10 m · 58 static obstacles · 9 moving obstacles.** Both rows share a **6× playback** clock, with START below and GOAL above.
+Dynamic scene: **30 × 10 m** · **58 static obstacles** · **9 moving obstacles**.
 
 <!-- VIDEO_SLOT: simulation_comparison -->
-![Ten methods in the same dynamic scene, shown in two synchronized rows](assets/previews/comparison.gif)
+<p align="center">
+  <img src="assets/previews/comparison.gif" width="100%" alt="Ten methods in the same dynamic scene, shown in two synchronized rows"/>
+</p>
 
-One recorded run per method. Shorter recordings hold their final frame.
+<p align="center"><em>Top-down · Synchronized 6× playback · One run per method; final frames held.</em></p>
 
-![VAC example run: zero static collisions, zero dynamic collisions, goal reached, 87.5 seconds](assets/images/single_run_highlights.svg)
+<p align="center">
+  <img src="assets/images/single_run_highlights.svg" width="100%" alt="VAC example run: zero static collisions, zero dynamic collisions, goal reached, 87.5 seconds"/>
+</p>
 
-**Among these ten recordings, VAC is the only method that reaches the goal without a collision.**
+Among these ten recordings, **VAC is the only method** that reaches the goal without a collision.
 
 ### Single-run outcomes
 
-| Method | Static collisions ↓ | Dynamic collisions ↓ | Goal reached | Run time (s) ↓ |
+| Method | Static<br>collisions ↓ | Dynamic<br>collisions ↓ | Goal<br>reached | Run time<br>(s) ↓ |
 | :--- | :---: | :---: | :---: | :---: |
 | Nav2 (DWB) | 3 | 5 | **Yes** | 151.4 |
 | NeuPAN | **0** | 5 | **Yes** | 84.6 |
@@ -54,7 +54,7 @@ One recorded run per method. Shorter recordings hold their final frame.
 | SEA-Nav | **0** | 8 | **Yes** | 90.9 |
 | **VAC (ours)** | **0** | **0** | **Yes** | 87.5 |
 
-**Bold:** best value in each column, including ties. Collision counts are **final event totals for each displayed run**, including repeated events. Time is measured before playback acceleration. Goal arrival alone does not imply collision-free success.
+*Bold = column best, including ties. Counts are collision events per run; time is before playback acceleration. Goal arrival does not imply collision-free success.*
 
 ## Method
 
@@ -62,15 +62,15 @@ One recorded run per method. Shorter recordings hold their final frame.
   <img src="assets/images/architecture.png" width="100%" alt="VAC architecture: planning, temporal revalidation, and velocity filtering"/>
 </p>
 
-- **Temporal planning.** Exploration and braking tracks provide candidate motions. The Safe-Time Contract revalidates their execution timing.
-- **Age-aligned velocity filtering.** PALB aligns obstacle tracks to control time and projects the requested velocity subject to obstacle and actuator constraints.
-- **Delayed backup analysis.** Separation and execution-coverage conditions specify when filtered execution can share a common delayed backup.
+- **Temporal planning:** exploration and braking tracks, revalidated by the Safe-Time Contract.
+- **Velocity filtering:** PALB aligns obstacle tracks to control time and projects velocities under obstacle and actuator constraints.
+- **Delayed backup:** separation and execution-coverage conditions specify when filtered execution can share a common backup.
 
-The analysis is conditional on a feasible relative-braking backup and full execution coverage. These conditions are not yet certified online.
+The analysis assumes a feasible relative-braking backup and full execution coverage; these conditions are not yet certified online.
 
 ## Simulation and real-world results
 
-**Aggregate results reported in the paper**, separate from the illustrative recordings above.
+Aggregate paper results, separate from the demonstration runs.
 
 ### Simulation
 
@@ -82,22 +82,26 @@ Matched-filter evaluation with **240 trials per filter**.
 | Gain over the delay-aware CBF variant | **+5.0 percentage points** |
 | PALB computation time: 95th percentile | **8.9 ms** |
 
-**VAC demonstration · synchronized top-down and oblique views**
+#### VAC demonstration
 
 <!-- VIDEO_SLOT: vac_simulation_top, vac_simulation_oblique -->
-![Complete VAC simulation run: synchronized top-down and oblique views at 6×](assets/previews/simulation.gif)
+<p align="center">
+  <img src="assets/previews/simulation.gif" width="100%" alt="Complete VAC simulation run: synchronized top-down and oblique views at 6×"/>
+</p>
 
-The complete **87.5 s** run is shown at **6×**. Both views depict the same trial.
+<p align="center"><em>Two synchronized views of the same 87.5 s run · 6× playback.</em></p>
 
 ### Real-world experiments
 
-**Outdoor Go2 course · 10 methods · 30 valid trials per method.**
+Outdoor Go2 course · **10 methods** · **30 valid trials per method**.
 
-![Complete ten-method comparison of real-world success and manual takeover rates](assets/images/real_world_results.svg)
+<p align="center">
+  <img src="assets/images/real_world_results.svg" width="100%" alt="Complete ten-method comparison of real-world success and manual takeover rates"/>
+</p>
 
-VAC records the **highest observed success rate (93.3%)**, the **lowest dynamic collision total (1)** and **lowest manual takeover rate (3.3%)**, with **zero static collisions**.
+<p align="center"><em>Success and manual takeover · 30 trials per method.</em></p>
 
-| Method | Success (%) ↑ | Static collisions ↓ | Dynamic collisions ↓ | Manual takeover (%) ↓ |
+| Method | Success<br>(%) ↑ | Static<br>collisions ↓ | Dynamic<br>collisions ↓ | Manual takeover<br>(%) ↓ |
 | :--- | :---: | :---: | :---: | :---: |
 | Nav2 / DWA | 73.3 | 2 | 4 | 16.7 |
 | NeuPAN | 80.0 | 1 | 3 | 13.3 |
@@ -110,26 +114,28 @@ VAC records the **highest observed success rate (93.3%)**, the **lowest dynamic 
 | FAR | 73.3 | 1 | 2 | 16.7 |
 | **VAC (ours)** | **93.3** | **0** | **1** | **3.3** |
 
-**Table V, complete.** Bold marks the best result, including ties. Success means goal arrival **without collision or manual takeover**. Static and dynamic collisions are **event totals across all 30 trials per method**, not counts from the example video; repeated events in a trial are included. Manual takeover is the percentage of trials requiring intervention.
+*Complete Table V. Success requires goal arrival without collision or takeover. Collisions are event totals over 30 trials per method. Bold marks the best value, including ties.*
 
-**Real-world demonstration · pedestrian-crossing excerpt at 1×**
+#### Real-world demonstration
 
 <!-- VIDEO_SLOT: outdoor_full -->
 <p align="center">
   <img src="assets/previews/outdoor.gif" width="360" alt="Outdoor Go2 pedestrian-crossing excerpt, 14.4–24.9 seconds of the source recording, shown at 1×; faces anonymized"/>
 </p>
 
-**10.5 s at 1×**, covering **14.4–24.9 s** of the approximately 25-second outdoor recording.
+<p align="center"><em>Pedestrian crossing · 1× · 10.5 s excerpt (14.4–24.9 s).</em></p>
 
 ## Narrated overview
 
-The full presentation covers the problem, geometric intuition, method, simulation comparison and real-world experiments in **2 min 59.9 s**, with English narration and embedded subtitles.
+English narration and subtitles · Full video: **2 min 59.9 s**.
 
 <!-- VIDEO_SLOT: overview -->
-![Silent 18-second excerpt montage from the narrated VAC overview](assets/previews/overview_preview.gif)
+<p align="center">
+  <img src="assets/previews/overview_preview.gif" width="100%" alt="Silent 18-second excerpt montage from the narrated VAC overview"/>
+</p>
 
-*Silent preview: six 3-second excerpts from the presentation, each at its original speed.*
+<p align="center"><em>Silent 18 s preview · Six 3-second excerpts, each at its original speed.</em></p>
 
 ## Code availability
 
-This repository provides anonymous demonstration materials for peer review. **The source code will be released upon acceptance of the paper.**
+Anonymous review materials. **The source code will be released upon acceptance of the paper.**
