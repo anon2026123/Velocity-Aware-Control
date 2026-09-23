@@ -7,11 +7,11 @@
 <p align="center">Quadruped navigation in dynamic environments.</p>
 
 <p align="center">
-  <a href="#dynamic-preview"><img src="assets/images/nav/demos.svg" width="72" height="28" alt="Demos"/></a>
-  <a href="#ten-method-comparison"><img src="assets/images/nav/comparison.svg" width="114" height="28" alt="Comparison"/></a>
-  <a href="#method"><img src="assets/images/nav/method.svg" width="80" height="28" alt="Method"/></a>
-  <a href="#simulation-and-real-world-results"><img src="assets/images/nav/results.svg" width="80" height="28" alt="Results"/></a>
-  <a href="#narrated-overview"><img src="assets/images/nav/video.svg" width="72" height="28" alt="Video"/></a>
+  <a href="#dynamic-preview">Demos</a> |
+  <a href="#ten-method-comparison">Comparison</a> |
+  <a href="#method">Method</a> |
+  <a href="#simulation-and-real-world-results">Results</a> |
+  <a href="#narrated-overview">Video</a>
 </p>
 
 > *VAC: Coupling Temporal Planning and Velocity Filtering for Quadruped Navigation* — submitted to IEEE ICRA 2027.
